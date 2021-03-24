@@ -1,5 +1,5 @@
 yarn build &&
-git check gh-pages &&
+git checkout gh-pages &&
 rm -rf *.html *.js *.css *.png &&
 mv dist/* ./ &&
 re -rf dist;
