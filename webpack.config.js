@@ -1,23 +1,16 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { basename } = require("path");
+const path = require("path");
+
+const base = require("./webpack.config.base.js");
 
 module.exports = {
-  mode: "development",
+  ...base,
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
   },
-  entry: "./src/index.js",
-  output: {
-    path: __dirname + "/dist",
-    filename: "index.[contenthash].js",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "叶健杰",
-      template: "src/assets/index.html",
-    }),
-  ],
   module: {
     rules: [
       {
